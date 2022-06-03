@@ -32,7 +32,7 @@ jobs:
       - run:
           name: Run Playbook and configure server
           command: |
-            ansible-playbook -i inventory main.yml
+            ansible-playbook -i ~/inventory ~/main.yml
 
 
 # Invoke jobs via workflows
