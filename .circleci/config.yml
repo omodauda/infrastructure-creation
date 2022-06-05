@@ -32,7 +32,7 @@ jobs:
       - run:
           name: Run Playbook and configure server
           command: |
-            ansible-playbook -i inventory.txt main.yml
+            ansible-playbook -i inventory.txt --key-file ~/.ssh/id_rsa_89:56:3b:65:96:18:51:a2:87:19:e5:82:6a:4e:de:ba main.yml
 
 
 # Invoke jobs via workflows
@@ -40,5 +40,5 @@ jobs:
 workflows:
   my_workflow:
     jobs:
-      - create_infrastructure
-      # - configure_infrastructure
+      # - create_infrastructure
+      - configure_infrastructure

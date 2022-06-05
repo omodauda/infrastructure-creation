@@ -1,18 +1,4 @@
 ---
-# - name: kill all apt processes
-#   become: yes
-#   command: killall apt
-
-# - name: configure dpk
-#   become: yes
-#   command: dpkg --configure -a
-
-# - name: update and upgrade packages
-#   become: yes
-#   apt:
-#     upgrade: yes
-#     update_cache: yes
-#     cache_valid_time: 86400
 - name: "update apt packages."
   become: yes
   apt:
