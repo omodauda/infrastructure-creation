@@ -23,6 +23,8 @@ jobs:
       - image: python:3.7-alpine3.11
     steps:
       - checkout
+      - add_ssh_keys:
+          fingerprints: ["89:56:3b:65:96:18:51:a2:87:19:e5:82:6a:4e:de:ba"]
       - run:
           name: Install Ansible
           command: |
