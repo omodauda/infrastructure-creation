@@ -25,15 +25,21 @@ jobs:
       - checkout
       - add_ssh_keys:
           fingerprints: ["89:56:3b:65:96:18:51:a2:87:19:e5:82:6a:4e:de:ba"]
+      - attach_workspace:
+          at: .
+      - run:
+          name: view content of inventory.txt
+          command: cat inventory.txt
       - run:
           name: Install Ansible
           command: |
             apk add --update ansible
+            pip install awscli
+            aws --version
       - run:
           name: Run Playbook and configure server
           command: |
-            cat ~/.ssh/id_rsa_89563b65961851a28719e5826a4edeba
-            ansible-playbook -i inventory.txt --key-file ~/.ssh/id_rsa_89563b65961851a28719e5826a4edeba main.yml
+            ansible-playbook -i inventory.txt main.yml
 
 
 # Invoke jobs via workflows
