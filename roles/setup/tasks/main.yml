@@ -1,13 +1,27 @@
 ---
-- name: "update apt packages."
+- name: kill all apt processes
   become: yes
-  apt:
-    update_cache: yes
+  command: killall apt
 
-- name: "upgrade packages"
+- name: configure dpk
+  become: yes
+  command: dpkg --configure -a
+
+- name: update and upgrade packages
   become: yes
   apt:
     upgrade: yes
+    update_cache: yes
+    cache_valid_time: 86400
+# - name: "update apt packages."
+#   become: yes
+#   apt:
+#     update_cache: yes
+
+# - name: "upgrade packages"
+#   become: yes
+#   apt:
+#     upgrade: yes
 
 - name: "remove dependencies that are no longer required"
   become: yes
@@ -27,7 +41,7 @@
     name: pm2
     global: yes
     production: yes
-    state: present
+    state: latest
 
 - name: Create directory
   file:
@@ -36,8 +50,8 @@
 
 - name: Copy index test page
   template:
-    src: "files/index.js"
-    dest: "~/web/index.js"
+    src: files/index.js
+    dest: ~/web/index.js
 
 - name: Executing node
   shell: |
