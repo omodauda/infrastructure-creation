@@ -1,7 +1,7 @@
 ---
 # Exercise for config server and deployment
 - name: Exercise for configuring EC2 server and deployment
-  hosts: all
+  hosts: web
   user: ubuntu
   become: true
   become_method: sudo
