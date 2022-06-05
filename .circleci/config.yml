@@ -34,12 +34,11 @@ jobs:
           name: Install Ansible
           command: |
             apk add --update ansible
-            pip install awscli
-            aws --version
       - run:
           name: Run Playbook and configure server
           command: |
-            ansible-playbook -i inventory.txt main.yml
+            cat ~/.ssh/id_rsa_89563b65961851a28719e5826a4edeba
+            ansible-playbook -i inventory.txt --key-file ~/.ssh/id_rsa_89563b65961851a28719e5826a4edeba main.yml
 
 
 # Invoke jobs via workflows
