@@ -1,2 +1,2 @@
-[web]
-ec2-35-173-186-182.compute-1.amazonaws.com
+[all]
+35.173.186.182
