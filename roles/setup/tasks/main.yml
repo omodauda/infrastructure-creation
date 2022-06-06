@@ -22,7 +22,7 @@
     update_cache: yes
 
 - name: show node version
-  command: echo node --version
+  shell: echo node --version
 
 - name: "install pm2"
   become: yes
