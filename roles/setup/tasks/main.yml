@@ -23,6 +23,9 @@
 
 - name: show node version
   shell: echo node --version
+  register: command_output
+  debug:
+    msg: "{{command_output.stdout_lines"
 
 - name: "install pm2"
   become: yes
