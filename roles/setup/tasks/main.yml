@@ -24,6 +24,8 @@
 - name: show node version
   shell: echo node --version
   register: command_output
+
+- name: print version
   debug:
     msg: "{{command_output.stdout_lines"
 
