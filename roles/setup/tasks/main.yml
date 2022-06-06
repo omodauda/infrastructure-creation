@@ -21,21 +21,13 @@
     state: latest
     update_cache: yes
 
-- name: show node version
-  shell: "echo node --version"
-  register: command_output
-
-- name: print version
-  debug:
-    var: command_output.stdout_lines
-
 - name: "install pm2"
   become: yes
   npm:
     name: pm2
     global: yes
     production: yes
-    state: latest
+    state: present
 
 - name: Create directory
   file:
