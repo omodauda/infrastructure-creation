@@ -3,6 +3,7 @@
   become: yes
   apt:
     update_cache: yes
+    cache_valid_time: 86400
 
 - name: "upgrade packages"
   become: yes
@@ -17,7 +18,7 @@
 - name: "install dependencies."
   become: yes
   apt:
-    name: ["nodejs=13*", "npm"]
+    name: ["nodejs=13", "npm"]
     # state: latest
     update_cache: yes
 
