@@ -18,6 +18,6 @@ Resources:
     Properties:
       SecurityGroups: 
         - Ref: InstanceSecurityGroup
-      KeyName: ansible
+      KeyName: demo
       ImageId: ami-09d56f8956ab235b3
       InstanceType: t3.micro
