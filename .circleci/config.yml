@@ -27,7 +27,7 @@ jobs:
           fingerprints: ["18:39:04:07:48:73:4e:73:37:fe:21:9b:b8:66:e6:97"]
       - run:
           name: view content of inventory.txt
-          command: cat inventory.txt
+          command: cat inventory
       - run:
           name: Install Ansible
           command: |
