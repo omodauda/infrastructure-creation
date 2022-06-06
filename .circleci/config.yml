@@ -35,7 +35,7 @@ jobs:
       - run:
           name: Run Playbook and configure server
           command: |
-            ansible-playbook -i ./ansible/inventory.txt --key-file ~/.ssh/id_rsa_89563b65961851a28719e5826a4edeba ./ansible/main.yml
+            ansible-playbook -i ./ansible/inventory.txt ./ansible/main.yml
 
 
 # Invoke jobs via workflows
