@@ -27,7 +27,7 @@
 
 - name: print version
   debug:
-    msg: "{{command_output.stdout_lines"
+    msg: "{{command_output.stdout_lines}}"
 
 - name: "install pm2"
   become: yes
