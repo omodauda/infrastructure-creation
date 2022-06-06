@@ -19,5 +19,5 @@ Resources:
       SecurityGroups: 
         - Ref: InstanceSecurityGroup
       KeyName: tutorial
-      ImageId: ami-005de95e8ff495156
+      ImageId: ami-09d56f8956ab235b3
       InstanceType: t3.micro
