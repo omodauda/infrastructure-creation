@@ -18,7 +18,7 @@
   become: yes
   apt:
     name: ["nodejs=13*", "npm"]
-    state: latest
+    # state: latest
     update_cache: yes
 
 - name: show node version
