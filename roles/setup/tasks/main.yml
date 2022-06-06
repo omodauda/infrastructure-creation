@@ -3,7 +3,6 @@
   become: yes
   apt:
     update_cache: yes
-    cache_valid_time: 86400
 
 - name: "upgrade packages"
   become: yes
@@ -28,7 +27,7 @@
     name: pm2
     global: yes
     production: yes
-    state: present
+    state: latest
 
 - name: Create directory
   file:
