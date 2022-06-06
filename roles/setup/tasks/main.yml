@@ -18,8 +18,8 @@
 - name: "install dependencies."
   become: yes
   apt:
-    name: ["nodejs=10", "npm"]
-    # state: latest
+    name: ["nodejs", "npm"]
+    state: latest
     update_cache: yes
 
 - name: show node version
