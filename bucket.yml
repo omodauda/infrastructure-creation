@@ -16,7 +16,7 @@ Resources:
         ErrorDocument: error.html
   
   WebsiteBucketPolicy:
-    Type: "AWS::S3:BucketPolicy"
+    Type: "AWS::S3::BucketPolicy"
     Properties:
       Bucket: !Ref WebsiteBucket
       PolicyDocument:
