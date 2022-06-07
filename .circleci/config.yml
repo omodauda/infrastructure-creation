@@ -104,10 +104,9 @@ jobs:
             aws cloudformation \
             list-exports --query "Exports[?Name==\`BucketName\`].Value" \
             --no-paginate --output text > ~/textfile.txt
-      - run: cat ~/textfile.txt
       - run:
           name: print old bucket name
-          command: echo cat ~/textfile.txt
+          command: cat ~/textfile.txt
       - persist_to_workspace:
           root: ~/
           paths:

@@ -28,7 +28,9 @@ Resources:
             QueryString: False
           TargetOriginId: webpage
           ViewerProtocolPolicy: allow-all
+
 Outputs:
+  
   BucketName:
     Value: !Sub ${BucketName}
     Export:
