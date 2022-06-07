@@ -90,7 +90,7 @@ jobs:
             --parameter-overrides BucketName="mybucket-${CIRCLE_WORKFLOW_ID:0:7}"
           
           # COPY ALL CONTENTS OF THE CURRENT DIRECTORY TO THE S3 BUCKET
-      - run: aws s3 sync . s3://mybucket-${CIRCLE_WORKFLOW_ID:0:7} --delete
+      - run: aws s3 sync ./s3files s3://mybucket-${CIRCLE_WORKFLOW_ID:0:7} --delete
 
   get_last_deployment_id:
     docker:
@@ -101,7 +101,7 @@ jobs:
       - run:
           name: Fetch and save the old bucket name responsible for the last release.
           command: |
-            aws cloud formation \
+            aws cloudformation \
             list-exports --query "Exports[?Name==\`BucketName\`].Value" \
             --no-paginate --output text > ~/textfile.txt
       - persist_to_workspace:
