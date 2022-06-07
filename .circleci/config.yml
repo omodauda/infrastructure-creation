@@ -104,6 +104,9 @@ jobs:
             aws cloudformation \
             list-exports --query "Exports[?Name==\`BucketName\`].Value" \
             --no-paginate --output text > ~/textfile.txt
+      - run:
+          name: print old bucket name
+          command: cat ~/textfile.txt
       - persist_to_workspace:
           root: ~/
           paths:
@@ -131,10 +134,11 @@ jobs:
       - attach_workspace:
           at: ~/
       - run:
-          name: Destroy the previous s3 bucket and cloudformation stack
+          name: Destroy the previous s3 bucket
           command: |
             export OldBucketID=$(cat ~/textfile.txt)
             aws s3 rm "s3://${OldBucketID}" --recursive
+
 
 # Invoke jobs via workflows
 # See: https://circleci.com/docs/2.0/configuration-reference/#workflows
