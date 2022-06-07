@@ -4,8 +4,6 @@ version: 2.1
 
 commands:
   destroy_environment:
-    docker:
-      - image: amazon/aws-cli
     steps:
       - run:
           name: Destroy environment
@@ -72,6 +70,7 @@ jobs:
     docker:
       - image: alpine:latest
     steps:
+      - checkout
       - run:
           name: Test job
           # Fail the job intentionally to simulate an error
