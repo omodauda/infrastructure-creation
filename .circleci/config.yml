@@ -68,9 +68,8 @@ jobs:
 
   smoke_test:
     docker:
-      - image: alpine:latest
+      - image: amazon/aws-cli
     steps:
-      - checkout
       - run:
           name: Test job
           # Fail the job intentionally to simulate an error
